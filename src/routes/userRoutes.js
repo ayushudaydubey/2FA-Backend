@@ -12,7 +12,7 @@ body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 c
 
 const loginLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 5,
+  max: 10,
   message: 'Too many login attempts, please try again later.',
 });
 
