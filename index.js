@@ -7,8 +7,8 @@ import mongoSanitize from 'express-mongo-sanitize';
 import rateLimit from 'express-rate-limit';
 import cookieParser from 'cookie-parser';
 
-import { connectDB } from './db/db.js';
-import userRoutes from './routes/userRoutes.js';
+import { connectDB } from './src/db/db.js';
+import userRoutes from './src/routes/userRoutes.js';
 
 dotenv.config();
 
@@ -25,8 +25,8 @@ app.use(cors({
 }));
 
 app.use(helmet());
-app.use(xss());
-app.use(mongoSanitize());
+// app.use(xss());
+// app.use(mongoSanitize());
 
 const limiter = rateLimit({
   windowMs: 10 * 60 * 1000,
